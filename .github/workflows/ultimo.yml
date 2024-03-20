@@ -1,4 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
+~# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
@@ -32,14 +32,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Node Setup
-        uses: actions/setup-node@v4
-	      whith:
-      	   node-version: 20
-      	   cache: 'npm'
-      - name: Install Dependiences
-	      run: npm install
-      - name: Build Size
-      	run: npm run build
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install Dependecies
+        run: npm install
+      - name: Build Site
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
@@ -49,4 +49,4 @@ jobs:
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4~
